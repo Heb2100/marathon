@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainfragment">
 
+    <fragment
+        android:id="@+id/mainfragment"
+        android:name="com.example.marathon.fragment.Mainfragment"
+        android:label="fragment_mainfragment"
+        tools:layout="@layout/fragment_mainfragment">
+        <action
+            android:id="@+id/action_mainfragment_to_questionfragment_1"
+            app:destination="@id/questionfragment_1" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionfragment_1"
+        android:name="com.example.marathon.fragment.Questionfragment_1"
+        android:label="fragment_question1"
+        tools:layout="@layout/fragment_question1">
+        <action
+            android:id="@+id/action_questionfragment_1_to_questionfragment_2"
+            app:destination="@id/questionfragment_2" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionfragment_2"
+        android:name="com.example.marathon.fragment.Questionfragment_2"
+        android:label="fragment_question2"
+        tools:layout="@layout/fragment_question2">
+        <action
+            android:id="@+id/action_questionfragment_2_to_resultfragment"
+            app:destination="@id/resultfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultfragment"
+        android:name="com.example.marathon.fragment.Resultfragment"
+        android:label="fragment_resultfragment"
+        tools:layout="@layout/fragment_resultfragment">
+        <action
+            android:id="@+id/action_resultfragment_to_mainfragment"
+            app:destination="@id/mainfragment" />
+    </fragment>
 </navigation>
