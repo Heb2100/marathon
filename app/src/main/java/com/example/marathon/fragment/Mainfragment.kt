@@ -6,10 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import com.example.marathon.R
-import kotlinx.android.synthetic.main.fragment_mainfragment.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -40,21 +37,13 @@ class Mainfragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mainfragment, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_mainfragment, container, false)
 
-    lateinit var navController: NavController
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        navController = Navigation.findNavController(view)
-
-        btn_next.setOnClickListener{
-            navController.navigate(R.id.action_mainfragment_to_questionfragment_1)
-        }
+        return view
 
     }
+
+
 
     companion object {
         /**
